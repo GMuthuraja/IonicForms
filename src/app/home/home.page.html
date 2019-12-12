@@ -7,15 +7,15 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="myForm" (ngSubmit)=submitForm(myForm.value)>
+  <form [formGroup]="myFormGroup" (ngSubmit)=submitForm(myFormGroup.value)>
     <ion-list>
       <ion-item>
-        <ion-input type="tel" formControlName="mobile" placeholder="Mobile Number"></ion-input>
+        <ion-input type="tel" minlength="10" maxlength="10" formControlName="mobile" placeholder="Mobile Number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-input type="password" formControlName="password" placeholder="Enter Password"></ion-input>
       </ion-item>
     </ion-list>
-    <ion-button type="submit" expand="full" shape="round" [disabled]="myForm.invalid">Submit</ion-button>
+    <ion-button type="submit" expand="full" shape="round" [disabled]="myFormGroup.invalid">Submit</ion-button>
   </form>
 </ion-content>
